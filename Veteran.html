@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enabled Veterans | Accessible employment for veterans, worldwide</title>
+<meta name="description" content="Enabled Veterans removes the structural barriers that keep veterans with disabilities out of good jobs. We fix the hiring system, not the person. A global initiative by Enabled Talent.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --field:#2E3620; --field-2:#3A4529; --field-3:#232a18;
+    --bone:#EDE8DA; --bone-dim:#C4C1B2;
+    --brass:#C89B3C; --brass-2:#E0B85A; --brass-ink:#9C6F16;
+    --paper:#F2EFE6; --paper-2:#EAE6D8; --white:#FFFFFF;
+    --ink:#20261A; --ink-dim:#55603F; --ink-soft:#6C7358;
+    --line:rgba(237,232,218,.16); --line-dark:rgba(35,40,26,.14);
+    --display:'Archivo',system-ui,sans-serif;
+    --body:'IBM Plex Sans',system-ui,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+    --wrap:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);background:var(--field-3);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  h1,h2,h3,h4{font-family:var(--display);font-weight:800;line-height:1.06;letter-spacing:-.01em}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--brass-ink)}
+  .sec-dark .eyebrow{color:var(--brass)}
+
+  /* buttons / pills */
+  .btn{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--body);font-weight:600;font-size:.95rem;padding:.8rem 1.4rem;border-radius:999px;border:1.5px solid transparent;cursor:pointer;transition:background .15s ease,color .15s ease}
+  .btn-ink{border-color:var(--ink);color:var(--ink)}
+  .btn-ink:hover{background:var(--ink);color:var(--paper)}
+  .btn-bone{border-color:var(--bone);color:var(--bone)}
+  .btn-bone:hover{background:var(--bone);color:var(--ink)}
+  .btn-brass{background:var(--brass);color:var(--ink);border-color:var(--brass)}
+  .btn-brass:hover{background:var(--brass-2);border-color:var(--brass-2)}
+  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--brass-2);outline-offset:2px}
+
+  .pill{display:inline-flex;align-items:center;gap:.7rem;background:var(--field);color:var(--paper);font-family:var(--body);font-weight:600;font-size:.92rem;padding:.45rem .55rem .45rem 1.15rem;border-radius:999px;border:0;cursor:pointer;transition:background .15s ease}
+  .pill:hover{background:#39442a}
+  .pill .badge{width:34px;height:34px;border-radius:999px;background:var(--brass);display:grid;place-items:center;flex:0 0 auto}
+  .pill .badge svg{width:16px;height:16px;stroke:var(--ink);fill:none}
+  .arrowlink{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;color:var(--ink)}
+  .arrowlink .b{width:30px;height:30px;border-radius:999px;background:var(--field);display:grid;place-items:center}
+  .arrowlink .b svg{width:14px;height:14px;stroke:var(--paper);fill:none;stroke-width:2.2}
+  .arrowlink:hover .b{background:var(--brass);}
+  .arrowlink:hover .b svg{stroke:var(--ink)}
+
+  /* self-contained brand plate */
+  .plate{position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(200,155,60,.05) 0 2px,transparent 2px 16px),radial-gradient(120% 130% at 25% 15%,#47543a,#2b3220 55%,#232a18);display:grid;place-items:center}
+  .plate svg{width:28%;max-width:96px;height:auto;stroke:var(--brass-2);fill:none;stroke-width:1.1;opacity:.55}
+  .cap{position:absolute;left:14px;bottom:12px;z-index:2;font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;color:rgba(237,232,218,.8);background:rgba(35,42,24,.55);padding:5px 9px;border-radius:6px}
+
+  /* ===== HERO ===== */
+  .stage{padding:16px 16px 0}
+  .hero-card{background:var(--white);color:var(--ink);border-radius:26px;overflow:hidden;padding:22px 34px 34px;max-width:1280px;margin:0 auto}
+  .card-nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:6px 4px 30px;position:relative}
+  .brand{display:flex;align-items:center;gap:.55rem;font-family:var(--display);font-weight:900;font-size:1.1rem;letter-spacing:.01em;color:var(--ink)}
+  .brand .mark{width:30px;height:30px;border:2px solid var(--brass-ink);border-radius:6px;display:grid;place-items:center;color:var(--brass-ink);font-size:1rem;flex:0 0 auto}
+  .brand em{color:var(--brass-ink);font-style:normal}
+  .card-menu{display:flex;align-items:center;gap:2.2rem;justify-self:center}
+  .card-menu a{font-size:.95rem;color:var(--ink-soft);font-weight:500;transition:color .15s}
+  .card-menu a:hover{color:var(--ink)}
+  .card-nav .right{justify-self:end;display:flex;align-items:center;gap:.6rem}
+  .burger{display:none;background:none;border:0;color:var(--ink);cursor:pointer;padding:8px}
+  .burger svg{width:26px;height:26px}
+  .hero-top{display:grid;grid-template-columns:1.55fr 1fr;gap:40px;align-items:end;padding:8px 4px 26px}
+  .hero-top h1{font-size:clamp(2.5rem,5.6vw,4.6rem);color:var(--ink)}
+  .hero-top h1 .accent{color:var(--brass-ink)}
+  .hero-right{padding-bottom:.4rem}
+  .hero-right p{color:var(--ink-soft);font-size:1rem;max-width:34ch;margin-bottom:1.3rem}
+  .hero-right .actions{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+  .hero-right .textlink{font-weight:600;color:var(--ink);border-bottom:2px solid var(--brass);padding-bottom:2px;font-size:.95rem}
+  .hero-image{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:16/7;border:1px solid var(--line-dark)}
+
+  /* ===== section shells ===== */
+  section{padding:88px 0}
+  .light{background:var(--paper)}
+  .white-sec{background:var(--white)}
+  .paper2-sec{background:var(--paper-2)}
+  .sec-dark{background:var(--field);color:var(--bone)}
+  .sec-head2{display:grid;grid-template-columns:1.1fr 1fr;gap:44px;align-items:end;margin-bottom:44px}
+  .sec-head2 h2{font-size:clamp(1.9rem,4vw,3rem)}
+  .sec-head2 .r p{color:var(--ink-dim);margin-bottom:1rem}
+  .sec-dark .sec-head2 .r p{color:var(--bone-dim)}
+  .eyebrow+h2{margin-top:.7rem}
+  .head{max-width:60ch;margin-bottom:14px}
+  .head h2{font-size:clamp(1.9rem,4vw,3rem);margin:.7rem 0}
+  .head p{color:var(--ink-dim)}
+  .sec-dark .head p{color:var(--bone-dim)}
+  .subline{font-size:1.05rem;max-width:54ch}
+
+  /* ===== trusted logos ===== */
+  .trusted{padding:34px 0;background:var(--paper);border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark)}
+  .trusted .row{display:flex;align-items:center;justify-content:center;gap:16px 34px;flex-wrap:wrap}
+  .trusted .lbl{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim)}
+  .lchip{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--display);font-weight:800;color:var(--ink);opacity:.55;font-size:1.05rem}
+  .lchip .d{width:24px;height:24px;border-radius:6px;background:var(--field);color:var(--brass-2);display:grid;place-items:center;font-size:.7rem}
+
+  /* ===== who we are + stats ===== */
+  .quote-lg{font-family:var(--display);font-weight:700;font-size:clamp(1.4rem,2.6vw,2rem);line-height:1.35;color:var(--ink);max-width:26ch}
+  .statband{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:48px;border-top:1px solid var(--line-dark);padding-top:36px}
+  .stat .n{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4vw,2.8rem);color:var(--brass-ink);line-height:1}
+  .stat p{color:var(--ink-dim);font-size:.92rem;margin-top:.5rem}
+  .stat .todo{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.05em;color:var(--brass-ink);opacity:.75;margin-top:5px}
+
+  /* ===== services cards ===== */
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .scard{background:var(--white);border:1px solid var(--line-dark);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .18s ease,box-shadow .18s ease}
+  .scard:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(35,40,26,.10)}
+  .scard .ph{position:relative;aspect-ratio:16/10}
+  .scard .body{padding:26px;display:flex;flex-direction:column;gap:12px;flex:1}
+  .scard h3{font-size:1.25rem;color:var(--ink)}
+  .scard>.body>p{color:var(--ink-dim);font-size:.96rem}
+  .scard ul{list-style:none;display:flex;flex-direction:column;gap:.4rem;margin:.2rem 0 .4rem}
+  .scard li{display:flex;gap:.6rem;color:var(--ink-dim);font-size:.92rem}
+  .scard li::before{content:"";width:7px;height:7px;margin-top:.5rem;background:var(--brass);border-radius:1px;flex:0 0 auto}
+  .scard .view{margin-top:auto;font-family:var(--body);font-weight:600;font-size:.9rem;color:var(--brass-ink);display:inline-flex;align-items:center;gap:.4rem}
+  .scard .view svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+
+  /* ===== process steps ===== */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .pstep .ph{position:relative;aspect-ratio:5/4;border-radius:16px;overflow:hidden;border:1px solid var(--line-dark);margin-bottom:18px}
+  .pstep .k{font-family:var(--mono);font-size:.8rem;color:var(--brass-ink)}
+  .pstep h3{font-size:1.2rem;color:var(--ink);margin:.5rem 0 .5rem}
+  .pstep p{color:var(--ink-dim);font-size:.96rem}
+
+  /* ===== marketplace ===== */
+  .jhead{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:30px}
+  .jtabs{display:flex;gap:6px;background:var(--white);border:1px solid var(--line-dark);border-radius:999px;padding:5px}
+  .jtab-btn{font-family:var(--body);font-weight:600;font-size:.92rem;color:var(--ink-soft);background:transparent;border:0;border-radius:999px;padding:.5rem 1.15rem;cursor:pointer;transition:all .15s}
+  .jtab-btn[aria-selected="true"]{background:var(--field);color:var(--paper)}
+  .jarrows{display:flex;gap:10px}
+  .jarrow{width:44px;height:44px;border-radius:999px;border:1px solid var(--line-dark);background:var(--white);color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:all .15s}
+  .jarrow:hover{background:var(--field);color:var(--paper);border-color:var(--field)}
+  .jarrow svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
+  .jpanel{display:none;margin-top:26px}
+  .jpanel.active{display:block}
+  .jscroll{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;scrollbar-width:none}
+  .jscroll::-webkit-scrollbar{display:none}
+  .jcard{flex:0 0 clamp(280px,33%,380px);scroll-snap-align:start;background:var(--white);border:1px solid var(--line-dark);border-radius:16px;padding:26px;display:flex;flex-direction:column;min-height:210px}
+  .jcard h4{font-size:1.15rem;color:var(--ink);line-height:1.28}
+  .jcard .pay{color:var(--ink-dim);font-size:.92rem;margin-top:.45rem}
+  .jcard .rule{height:1px;background:var(--line-dark);margin:18px 0}
+  .jcard .foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;gap:12px}
+  .jcard .hired{display:flex;align-items:center;gap:10px;font-size:.82rem;color:var(--ink-dim)}
+  .jcard .num{color:var(--ink);font-weight:700}
+  .avstack{display:flex}
+  .av{width:30px;height:30px;border-radius:50%;border:2px solid var(--white);margin-left:-9px;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:.6rem;color:var(--bone)}
+  .av:first-child{margin-left:0}
+  .jcard .seemore{font-family:var(--body);font-weight:600;font-size:.85rem;color:var(--brass-ink);white-space:nowrap}
+  .ccard .logo{width:46px;height:46px;border-radius:11px;background:linear-gradient(160deg,#3a4529,#232a18);display:grid;place-items:center;color:var(--brass-2);font-family:var(--display);font-weight:800;font-size:1.05rem;margin-bottom:14px}
+  .ccard .sector{color:var(--ink-dim);font-size:.88rem;margin-top:.35rem}
+  .jnote{font-family:var(--mono);font-size:.7rem;letter-spacing:.04em;color:var(--ink-dim);margin-top:18px}
+  .jbrowse{margin-top:22px}
+
+  /* ===== plans / for employers ===== */
+  .plans{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .plan{background:var(--white);border:1px solid var(--line-dark);border-radius:18px;padding:32px;position:relative;display:flex;flex-direction:column}
+  .plan.rec{border-color:var(--brass);box-shadow:0 0 0 1px var(--brass)}
+  .plan .tag{position:absolute;top:20px;right:20px;font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);background:var(--brass);padding:4px 10px;border-radius:999px}
+  .plan h3{font-size:1.5rem;color:var(--ink)}
+  .plan .desc{color:var(--ink-dim);font-size:.96rem;margin:.6rem 0 1.2rem}
+  .plan ul{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.6rem}
+  .plan li{display:flex;gap:.6rem;color:var(--ink-dim);font-size:.95rem}
+  .plan li svg{width:18px;height:18px;stroke:var(--brass-ink);fill:none;stroke-width:2;flex:0 0 auto;margin-top:2px}
+  .plan .btn{margin-top:auto;justify-content:center}
+
+  /* ===== testimonials ===== */
+  .tst{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .tcard{background:var(--white);border:1px solid var(--line-dark);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:16px}
+  .tcard .by{display:flex;align-items:center;gap:12px}
+  .tcard .av2{width:46px;height:46px;border-radius:999px;background:linear-gradient(160deg,#3a4529,#232a18);display:grid;place-items:center;color:var(--brass-2);font-family:var(--display);font-weight:800;flex:0 0 auto}
+  .tcard .nm{font-weight:600;color:var(--ink);font-size:.95rem}
+  .tcard .rl{color:var(--ink-dim);font-size:.82rem}
+  .tcard blockquote{color:var(--ink);font-size:1rem;line-height:1.5}
+
+  /* ===== faq ===== */
+  .faq-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:start}
+  .faq-aside h2{font-size:clamp(1.7rem,3.2vw,2.4rem);margin:.6rem 0 1rem}
+  .faq-aside p{color:var(--ink-dim);margin-bottom:1.3rem;max-width:34ch}
+  details{border-bottom:1px solid var(--line-dark);padding:6px 0}
+  summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 2px;font-family:var(--display);font-weight:700;font-size:1.05rem;color:var(--ink)}
+  summary::-webkit-details-marker{display:none}
+  summary .plus{width:26px;height:26px;flex:0 0 auto;position:relative}
+  summary .plus::before,summary .plus::after{content:"";position:absolute;background:var(--brass-ink);transition:transform .2s}
+  summary .plus::before{top:12px;left:4px;right:4px;height:2px}
+  summary .plus::after{left:12px;top:4px;bottom:4px;width:2px}
+  details[open] summary .plus::after{transform:scaleY(0)}
+  details .ans{padding:0 2px 22px;color:var(--ink-dim);font-size:.98rem;max-width:70ch}
+
+  /* ===== final cta + contact ===== */
+  .final h2{font-size:clamp(2rem,4.4vw,3.2rem);max-width:20ch}
+  .final .lead{color:var(--ink-dim);max-width:48ch;margin:1rem 0 0}
+  .final-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:52px;align-items:start;margin-top:44px}
+  .cinfo div{margin-bottom:20px}
+  .cinfo .k{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:6px}
+  .cinfo a,.cinfo span{color:var(--ink);font-size:1rem}
+  .cinfo a{border-bottom:1px solid var(--brass)}
+  form{display:grid;gap:16px}
+  .f2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  label{display:block;font-size:.78rem;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:6px}
+  input,textarea,select{width:100%;font-family:var(--body);font-size:1rem;padding:.8rem .9rem;border:1.5px solid var(--line-dark);border-radius:8px;background:#fff;color:var(--ink)}
+  textarea{min-height:120px;resize:vertical}
+
+  /* ===== footer ===== */
+  footer{background:var(--field-3);color:var(--bone);padding:64px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px}
+  .foot-brand .brand{color:var(--bone)}
+  .foot-brand .brand .mark{border-color:var(--brass);color:var(--brass)}
+  .foot-brand .brand em{color:var(--brass)}
+  .foot-brand p{color:var(--bone-dim);font-size:.94rem;max-width:38ch;margin-top:14px}
+  .foot-brand .fw{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--bone-dim);opacity:.8;margin-top:12px}
+  footer h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin-bottom:14px}
+  footer ul{list-style:none}
+  footer li{padding:.3rem 0}
+  footer li a{color:var(--bone-dim);font-size:.92rem}
+  footer li a:hover{color:var(--bone)}
+  .wordmark{font-family:var(--display);font-weight:900;font-size:clamp(2.6rem,9vw,6.5rem);letter-spacing:-.02em;color:#2b331f;line-height:1;margin:48px 0 8px;white-space:nowrap;overflow:hidden}
+  .foot-base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:22px;border-top:1px solid var(--line);font-family:var(--mono);font-size:.74rem;color:var(--bone-dim)}
+  .foot-base .lg a{margin-left:16px}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:920px){
+    .hero-top,.sec-head2,.services,.steps,.plans,.tst,.faq-layout,.final-grid,.foot-grid{grid-template-columns:1fr}
+    .statband{grid-template-columns:1fr 1fr}
+    .hero-image{aspect-ratio:4/3}
+    .card-nav{grid-template-columns:auto 1fr auto}
+    .card-menu{display:none}
+    .burger{display:inline-flex}
+    .card-menu.open{display:flex;flex-direction:column;align-items:flex-start;gap:1rem;position:absolute;top:100%;left:0;right:0;background:var(--white);border:1px solid var(--line-dark);border-radius:16px;padding:20px 22px;z-index:60}
+    .card-nav .right .pill .lbl{display:none}
+    .card-nav .right .pill{padding:.4rem .4rem}
+    .jcard{flex-basis:84%}
+    .jhead{align-items:stretch}
+    .wordmark{font-size:3.2rem}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none;transition:none}
+    .btn,.pill,.scard{transition:none}
+  }
+</style>
+</head>
+<body id="top">
+
+<!-- ===== HERO ===== -->
+<div class="stage">
+  <div class="hero-card">
+    <nav class="card-nav" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="Enabled Veterans home"><span class="mark" aria-hidden="true">★</span><span>Enabled<em> Veterans</em></span></a>
+      <div class="card-menu" id="menu">
+        <a href="#what">What we do</a>
+        <a href="#how">How it works</a>
+        <a href="#employers">For employers</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="right">
+        <a class="pill" href="#contact"><span class="lbl">Partner with us</span><span class="badge" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      </div>
+    </nav>
+    <div class="hero-top">
+      <h1>Work that works for veterans.<br><span class="accent">Wherever they served.</span></h1>
+      <div class="hero-right">
+        <p>Enabled Veterans removes the structural barriers that keep veterans with disabilities out of good jobs. We fix the hiring system, not the person.</p>
+        <div class="actions">
+          <a class="pill" href="#how"><span class="lbl">For veterans</span><span class="badge" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
+          <a class="textlink" href="#employers">For employers</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image"><span class="plate" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="12 3 14.6 8.7 21 9.3 16 13.6 17.6 20 12 16.4 6.4 20 8 13.6 3 9.3 9.4 8.7"/></svg></span><span class="cap">Placeholder graphic, swap for a real veteran at work</span></div>
+  </div>
+</div>
+
+<main>
+
+  <!-- ===== MARKETPLACE (projects / visual proof) ===== -->
+  <section class="paper2-sec">
+    <div class="wrap">
+      <div class="sec-head2 reveal">
+        <div class="l">
+          <p class="eyebrow">[ The marketplace ]</p>
+          <h2>Real roles. Real employers.</h2>
+        </div>
+        <div class="r"><p>A look at the kind of work and the employers on the network.</p></div>
+      </div>
+      <div class="jhead reveal">
+        <div class="jtabs" role="tablist" aria-label="Marketplace">
+          <button class="jtab-btn" role="tab" aria-selected="true" data-jt="roles">Open roles</button>
+          <button class="jtab-btn" role="tab" aria-selected="false" data-jt="employers">Employers hiring</button>
+        </div>
+        <div class="jarrows">
+          <button class="jarrow" data-dir="-1" aria-label="Scroll left"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <button class="jarrow" data-dir="1" aria-label="Scroll right"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+        </div>
+      </div>
+      <div class="jpanel active" data-jp="roles">
+        <div class="jscroll">
+          <div class="jcard"><h4>Logistics Coordinator</h4><div class="pay">CAD 28.00 to 36.00 / hour</div><div class="rule"></div><div class="foot"><span class="hired"><span class="avstack"><span class="av" style="background:#3A4529">JL</span><span class="av" style="background:#6C7358">MK</span><span class="av" style="background:#9C6F16">AR</span></span> Recently hired <span class="num">14</span></span><a class="seemore" href="#contact">See more</a></div></div>
+          <div class="jcard"><h4>IT Support Technician</h4><div class="pay">CAD 30.00 to 42.00 / hour</div><div class="rule"></div><div class="foot"><span class="hired"><span class="avstack"><span class="av" style="background:#6C7358">SD</span><span class="av" style="background:#9C6F16">TN</span><span class="av" style="background:#3A4529">PV</span></span> Recently hired <span class="num">9</span></span><a class="seemore" href="#contact">See more</a></div></div>
+          <div class="jcard"><h4>Security Operations Lead</h4><div class="pay">CAD 32.00 to 45.00 / hour</div><div class="rule"></div><div class="foot"><span class="hired"><span class="avstack"><span class="av" style="background:#9C6F16">RB</span><span class="av" style="background:#3A4529">EM</span><span class="av" style="background:#6C7358">KO</span></span> Recently hired <span class="num">12</span></span><a class="seemore" href="#contact">See more</a></div></div>
+          <div class="jcard"><h4>Project Coordinator</h4><div class="pay">CAD 34.00 to 48.00 / hour</div><div class="rule"></div><div class="foot"><span class="hired"><span class="avstack"><span class="av" style="background:#3A4529">AH</span><span class="av" style="background:#9C6F16">LC</span><span class="av" style="background:#6C7358">DS</span></span> Recently hired <span class="num">7</span></span><a class="seemore" href="#contact">See more</a></div></div>
+          <div class="jcard"><h4>Fleet Maintenance Technician</h4><div class="pay">CAD 29.00 to 40.00 / hour</div><div class="rule"></div><div class="foot"><span class="hired"><span class="avstack"><span class="av" style="background:#6C7358">MO</span><span class="av" style="background:#3A4529">JR</span><span class="av" style="background:#9C6F16">FT</span></span> Recently hired <span class="num">11</span></span><a class="seemore" href="#contact">See more</a></div></div>
+          <div class="jcard"><h4>Operations Manager</h4><div class="pay">CAD 60,000 to 85,000 / year</div><div class="rule"></div><div class="foot"><span class="hired"><span class="avstack"><span class="av" style="background:#9C6F16">GP</span><span class="av" style="background:#6C7358">NW</span><span class="av" style="background:#3A4529">BC</span></span> Recently hired <span class="num">5</span></span><a class="seemore" href="#contact">See more</a></div></div>
+        </div>
+      </div>
+      <div class="jpanel" data-jp="employers">
+        <div class="jscroll">
+          <div class="jcard ccard"><div class="logo">NL</div><h4>Northbridge Logistics</h4><div class="sector">Transport and supply chain</div><div class="rule"></div><div class="foot"><span class="hired"><span class="num">6</span> open roles</span><a class="seemore" href="#contact">View jobs</a></div></div>
+          <div class="jcard ccard"><div class="logo">MH</div><h4>Meridian Health</h4><div class="sector">Healthcare</div><div class="rule"></div><div class="foot"><span class="hired"><span class="num">4</span> open roles</span><a class="seemore" href="#contact">View jobs</a></div></div>
+          <div class="jcard ccard"><div class="logo">AS</div><h4>Apex Security</h4><div class="sector">Safety and security</div><div class="rule"></div><div class="foot"><span class="hired"><span class="num">8</span> open roles</span><a class="seemore" href="#contact">View jobs</a></div></div>
+          <div class="jcard ccard"><div class="logo">GU</div><h4>Greenfield Utilities</h4><div class="sector">Energy</div><div class="rule"></div><div class="foot"><span class="hired"><span class="num">3</span> open roles</span><a class="seemore" href="#contact">View jobs</a></div></div>
+          <div class="jcard ccard"><div class="logo">VS</div><h4>Vantage Systems</h4><div class="sector">IT services</div><div class="rule"></div><div class="foot"><span class="hired"><span class="num">5</span> open roles</span><a class="seemore" href="#contact">View jobs</a></div></div>
+          <div class="jcard ccard"><div class="logo">HC</div><h4>Harbour City</h4><div class="sector">Public sector</div><div class="rule"></div><div class="foot"><span class="hired"><span class="num">7</span> open roles</span><a class="seemore" href="#contact">View jobs</a></div></div>
+        </div>
+      </div>
+      <p class="jnote">Sample listings shown. Connect your live jobs feed to populate this section.</p>
+      <a class="btn btn-ink jbrowse" href="#contact">Browse all roles</a>
+    </div>
+  </section>
+
+  <!-- ===== TRUSTED ===== -->
+  <div class="trusted">
+    <div class="wrap row">
+      <span class="lbl">Trusted by employers and partners</span>
+      <span class="lchip"><span class="d">ET</span>Enabled Talent</span>
+      <span class="lchip"><span class="d">P</span>Partner</span>
+      <span class="lchip"><span class="d">P</span>Partner</span>
+      <span class="lchip"><span class="d">P</span>Partner</span>
+    </div>
+  </div>
+
+  <!-- ===== WHO WE ARE ===== -->
+  <section class="white-sec">
+    <div class="wrap">
+      <div class="sec-head2 reveal">
+        <div class="l">
+          <p class="eyebrow">[ Who we are ]</p>
+          <h2>Access to work, by design.</h2>
+        </div>
+        <div class="r">
+          <p>Enabled Veterans opens good work to veterans with disabilities, in any country. We fix the hiring system, not the person. The same barriers repeat worldwide, so the model travels.</p>
+          <a class="arrowlink" href="#what">What we do <span class="b" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+        </div>
+      </div>
+      <p class="quote-lg reveal">&ldquo;A veteran's skills should decide their work, not a form that screens them out. We build the tools and the network to make that true, everywhere.&rdquo;</p>
+      <div class="statband reveal">
+        <div class="stat"><div class="n">000</div><p>veterans placed<span class="todo">add real number</span></p></div>
+        <div class="stat"><div class="n">00</div><p>employers hiring<span class="todo">add real number</span></p></div>
+        <div class="stat"><div class="n">00</div><p>countries reached<span class="todo">add real number</span></p></div>
+        <div class="stat"><div class="n">00%</div><p>still in role after a year<span class="todo">add real number</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHAT WE DO (services) ===== -->
+  <section id="what" class="light">
+    <div class="wrap">
+      <div class="sec-head2 reveal">
+        <div class="l">
+          <p class="eyebrow">[ What we do ]</p>
+          <h2>How we close the gap.</h2>
+        </div>
+        <div class="r">
+          <p>We do not ask veterans to work harder to fit a broken process. We change the process, then support the match on both sides.</p>
+          <a class="arrowlink" href="#how">See how it works <span class="b" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+        </div>
+      </div>
+      <div class="services">
+        <div class="scard reveal">
+          <div class="ph"><span class="plate" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.4-3 8-7 10-4-2-7-5.6-7-10V6l7-3z"/></svg></span></div>
+          <div class="body">
+            <h3>Accessible hiring systems</h3>
+            <p>We rebuild the steps that screen people out, from job posts to interviews.</p>
+            <ul><li>Audited application forms</li><li>Accessible interviews</li><li>Fair assessments</li></ul>
+            <a class="view" href="#employers">View <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+        <div class="scard reveal">
+          <div class="ph"><span class="plate" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="15 9 11 11 9 15 13 13 15 9"/></svg></span></div>
+          <div class="body">
+            <h3>Skills matched to roles</h3>
+            <p>Military experience is translated to civilian roles and matched by skill.</p>
+            <ul><li>Service to civilian mapping</li><li>Skill-based matching</li><li>Roles reviewed for access</li></ul>
+            <a class="view" href="#how">View <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+        <div class="scard reveal">
+          <div class="ph"><span class="plate" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 7l3-3 3 3-3 3"/><path d="M17 4l-9 9-4 4 3 3 4-4 9-9"/></svg></span></div>
+          <div class="body">
+            <h3>Accommodations and retention</h3>
+            <p>Accommodations set from day one, with support that makes the hire last.</p>
+            <ul><li>Set before the first interview</li><li>Most cost little or nothing</li><li>Support through onboarding</li></ul>
+            <a class="view" href="#employers">View <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS (process) ===== -->
+  <section id="how" class="white-sec">
+    <div class="wrap">
+      <div class="sec-head2 reveal">
+        <div class="l">
+          <p class="eyebrow">[ How it works ]</p>
+          <h2>Three steps to work.</h2>
+        </div>
+        <div class="r">
+          <p>We have made the path simple, for you and for the team that hires you. Here is what to expect.</p>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="pstep reveal">
+          <div class="ph"><span class="plate" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/></svg></span></div>
+          <div class="k">01</div><h3>Build your profile</h3>
+          <p>Add your service history and skills. We translate them into civilian terms employers understand.</p>
+        </div>
+        <div class="pstep reveal">
+          <div class="ph"><span class="plate" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></span></div>
+          <div class="k">02</div><h3>Get matched</h3>
+          <p>We connect you with employers ready to accommodate, with the details agreed up front.</p>
+        </div>
+        <div class="pstep reveal">
+          <div class="ph"><span class="plate" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.4-3 8-7 10-4-2-7-5.6-7-10V6z"/></svg></span></div>
+          <div class="k">03</div><h3>Start with support</h3>
+          <p>We stay involved through onboarding so the role works for you from the first day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOR EMPLOYERS (plans) ===== -->
+  <section id="employers" class="light">
+    <div class="wrap">
+      <div class="sec-head2 reveal">
+        <div class="l">
+          <p class="eyebrow">[ For employers ]</p>
+          <h2>Two ways to work with us.</h2>
+        </div>
+        <div class="r"><p>Whether you are hiring today or building access at scale, there is a clear way in.</p></div>
+      </div>
+      <div class="plans">
+        <div class="plan reveal">
+          <h3>Hire veterans</h3>
+          <p class="desc">Open your roles to skilled veterans and get support to make the hire last.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Skill-based matching</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Process audit</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Accommodation guidance</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Onboarding support</li>
+          </ul>
+          <a class="btn btn-ink" href="#contact">Start hiring</a>
+        </div>
+        <div class="plan rec reveal">
+          <span class="tag">For partners</span>
+          <h3>Partner or fund</h3>
+          <p class="desc">For governments, foundations, and veteran organisations building access at scale.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Country pilots</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Shared reporting</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Policy support</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Co-designed programs</li>
+          </ul>
+          <a class="btn btn-brass" href="#contact">Partner with us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="white-sec">
+    <div class="wrap">
+      <div class="sec-head2 reveal">
+        <div class="l">
+          <p class="eyebrow">[ Stories ]</p>
+          <h2>Voices from the network.</h2>
+        </div>
+        <div class="r"><p>The story that convinces a veteran is another veteran's. Add real ones here as you place people.</p></div>
+      </div>
+      <div class="tst">
+        <div class="tcard reveal"><div class="by"><span class="av2" aria-hidden="true">★</span><div><div class="nm">Veteran name</div><div class="rl">Role, employer</div></div></div><blockquote>&ldquo;Add a short quote from a veteran you placed, in their own words.&rdquo;</blockquote></div>
+        <div class="tcard reveal"><div class="by"><span class="av2" aria-hidden="true">★</span><div><div class="nm">Employer name</div><div class="rl">Title, company</div></div></div><blockquote>&ldquo;Add a short quote from a hiring partner about the experience.&rdquo;</blockquote></div>
+        <div class="tcard reveal"><div class="by"><span class="av2" aria-hidden="true">★</span><div><div class="nm">Partner name</div><div class="rl">Role, organisation</div></div></div><blockquote>&ldquo;Add a short quote from a government or foundation partner.&rdquo;</blockquote></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="light">
+    <div class="wrap">
+      <div class="faq-layout">
+        <div class="faq-aside reveal">
+          <p class="eyebrow">[ FAQ ]</p>
+          <h2>Frequently asked questions.</h2>
+          <p>Need more detail? Reach out and our team will help.</p>
+          <a class="btn btn-ink" href="#contact">Ask a question</a>
+        </div>
+        <div class="reveal">
+          <details><summary>Which countries do you work in?<span class="plus" aria-hidden="true"></span></summary><div class="ans">Enabled Veterans is global. We started with a focus on North America and are building toward veterans and employers in any country. The barriers are similar everywhere, so the model travels.</div></details>
+          <details><summary>Who can join as a veteran?<span class="plus" aria-hidden="true"></span></summary><div class="ans">Any veteran looking for work, with a particular focus on those living with a service-connected or other disability. You do not need a formal diagnosis on file to start.</div></details>
+          <details><summary>What does it cost employers?<span class="plus" aria-hidden="true"></span></summary><div class="ans">Reach out and we will walk you through options based on your size and goals. Most workplace accommodations themselves cost little or nothing to put in place.</div></details>
+          <details><summary>How are accommodations handled?<span class="plus" aria-hidden="true"></span></summary><div class="ans">We agree accommodations before the first interview, not after an offer. We then support both sides through onboarding so nothing is left to chance.</div></details>
+          <details><summary>How is this different from a general job board?<span class="plus" aria-hidden="true"></span></summary><div class="ans">A job board lists roles. We fix the hiring process itself, match on skills rather than keywords, and stay involved through the hire so it lasts.</div></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA + CONTACT ===== -->
+  <section id="contact" class="white-sec final">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="eyebrow">[ Get started ]</p>
+        <h2>Ready to open work to veterans?</h2>
+        <p class="lead">Governments, foundations, employers, and veteran organisations. If you want to close this gap in your country, we should talk.</p>
+      </div>
+      <div class="final-grid">
+        <div class="cinfo reveal">
+          <div><div class="k">Email</div><a href="mailto:jeby@enabledtalent.com">jeby@enabledtalent.com</a></div>
+          <div><div class="k">Website</div><a href="https://www.enabledtalent.com" target="_blank" rel="noopener">enabledtalent.com</a></div>
+          <div><div class="k">Reach</div><span>Global</span></div>
+        </div>
+        <form class="reveal" onsubmit="return false">
+          <div class="f2">
+            <div><label for="fn">First name</label><input id="fn" type="text" autocomplete="given-name"></div>
+            <div><label for="ln">Last name</label><input id="ln" type="text" autocomplete="family-name"></div>
+          </div>
+          <div><label for="em">Email</label><input id="em" type="email" autocomplete="email"></div>
+          <div><label for="org">Organisation</label><input id="org" type="text" autocomplete="organization"></div>
+          <div><label for="who">I am a</label>
+            <select id="who"><option>Veteran looking for work</option><option>Employer</option><option>Government or agency</option><option>Foundation or veteran organisation</option><option>Other</option></select>
+          </div>
+          <div><label for="msg">How can we help?</label><textarea id="msg"></textarea></div>
+          <button class="btn btn-brass" type="submit" style="justify-content:center">Send message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top"><span class="mark" aria-hidden="true">★</span><span>Enabled<em> Veterans</em></span></a>
+        <p>Removing structural barriers to employment for veterans with disabilities. Access by design, not by exception.</p>
+        <p class="fw">A global initiative by Enabled Talent. Aligned with WHO, ILO, and UN CRPD frameworks.</p>
+      </div>
+      <div><h4>Site</h4><ul>
+        <li><a href="#what">What we do</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#employers">For employers</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul></div>
+      <div><h4>For employers</h4><ul>
+        <li><a href="#employers">Hire veterans</a></li>
+        <li><a href="#employers">Partner or fund</a></li>
+        <li><a href="#contact">Book a call</a></li>
+      </ul></div>
+      <div><h4>Reach us</h4><ul>
+        <li><a href="mailto:jeby@enabledtalent.com">jeby@enabledtalent.com</a></li>
+        <li><a href="https://www.enabledtalent.com" target="_blank" rel="noopener">enabledtalent.com</a></li>
+        <li>Global</li>
+      </ul></div>
+    </div>
+    <div class="wordmark" aria-hidden="true">Enabled Veterans</div>
+    <div class="foot-base">
+      <span>© 2026 Enabled Veterans. Part of Enabled Talent.</span>
+      <span class="lg"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">LinkedIn</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+  burger.addEventListener('click',function(){var o=menu.classList.toggle('open');burger.setAttribute('aria-expanded',o);});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');burger.setAttribute('aria-expanded',false);});});
+
+  var jtabs=document.querySelectorAll('.jtab-btn');
+  jtabs.forEach(function(b){b.addEventListener('click',function(){
+    jtabs.forEach(function(x){x.setAttribute('aria-selected','false');});
+    b.setAttribute('aria-selected','true');
+    document.querySelectorAll('.jpanel').forEach(function(p){p.classList.remove('active');});
+    document.querySelector('.jpanel[data-jp="'+b.getAttribute('data-jt')+'"]').classList.add('active');
+  });});
+  document.querySelectorAll('.jarrow').forEach(function(a){a.addEventListener('click',function(){
+    var sc=document.querySelector('.jpanel.active .jscroll'); if(!sc)return;
+    var card=sc.querySelector('.jcard');
+    var amt=(card?card.offsetWidth+20:320)*parseInt(a.getAttribute('data-dir'),10);
+    var smooth=!window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    sc.scrollBy({left:amt,behavior:smooth?'smooth':'auto'});
+  });});
+
+  var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(!reduce && 'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  }else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});}
+</script>
+</body>
+</html>
